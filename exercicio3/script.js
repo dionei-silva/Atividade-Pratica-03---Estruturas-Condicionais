@@ -1,4 +1,4 @@
-/* 3. Faça um algoritmo que simule um caixa eletrônico. Nesse algoritmo
+/* Faça um algoritmo que simule um caixa eletrônico. Nesse algoritmo
 a conta do usuário deve ser criada já com um saldo positivo. O
 usuário precisa informar a quantidade de dinheiro que deseja
 retirar, esse valor deve ser um número positivo, múltiplo de 5 e
@@ -12,3 +12,20 @@ OBS: Na verificação se o valor do saque é maior que o saldo deve
 ser considerado e também contabilizado o valor da taxa a ser
 cobrada pelo saque. Ou seja, o valor a ser sacado somado ao valor
 da taxa do saque não pode ser maior que o saldo disponível. */
+
+let saldo = 10000;
+let taxa = 4.5;
+let saque = prompt("Quanto deseja sacar?");
+if (saque !== null) {
+    saque = Number(saque.replace(".", "").replace(",", "."));
+}
+if (!saque) {
+    document.write("saque invalido");
+} else {
+    if (saque > saldo) {
+        document.write("saldo insuficiente");
+    } else {
+        let valor = saque - taxa - saldo;
+        document.write(`voce posui saldo de ${valor}`);
+    }
+}
