@@ -23,19 +23,23 @@ if (!peso) {
     }
     if (!idade) {
         document.write("idade invalida");
-    } else {
-        if (idade < 12) {
-            document.write("infantil");
-        } else if (idade <= 16 || peso < 40) {
+    } else if (idade <= 12) {
+        document.write("Infantil");
+    } else if (idade > 12 && idade < 17) {
+        if (peso <= 40) {
             document.write("juvenil leve");
-        } else if (peso > 40) {
+        } else {
             document.write("juvenil pesado");
-        } else if (idade <= 24 || peso < 45) {
+        }
+    } else if (idade > 16 && idade < 25) {
+        if (peso <= 45) {
             document.write("senior leve");
-        } else if (peso < 60) {
+        } else if (peso <= 60) {
             document.write("senior medio");
-        } else if (peso > 60) {
+        } else {
             document.write("senior pesado");
-        } else document.write("veterano");
+        }
+    } else {
+        document.write("veterano");
     }
 }
