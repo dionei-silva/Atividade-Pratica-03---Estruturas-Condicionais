@@ -14,18 +14,35 @@ cobrada pelo saque. Ou seja, o valor a ser sacado somado ao valor
 da taxa do saque não pode ser maior que o saldo disponível. */
 
 let saldo = 10000;
-let taxa = 4.5;
+const taxa = 4.5;
 let saque = prompt("Quanto deseja sacar?");
 if (saque !== null) {
     saque = Number(saque.replace(".", "").replace(",", "."));
 }
-if (!saque) {
-    document.write("saque invalido");
-} else {
-    if (saque > saldo) {
-        document.write("saldo insuficiente");
+if (!!saque) {
+    if (saque < 0) {
+        document.write("saque valor menor que zero invalido");
     } else {
-        let valor = saque - taxa - saldo;
-        document.write(`voce posui saldo de ${valor}`);
+        if (saque % 5 == 0) {
+            let saquetotal = saque + taxa;
+            if (saquetotal <= saldo) {
+                saldo -= saquetotal;
+                document.write(
+                    `Valor sacado é ${saque} e o saldo em conta é ${saldo}`
+                );
+            } else {
+                document.write("saldo insuficiente");
+            }
+        } else {
+            document.write("notas insuficiente");
+        }
     }
+
+    /* else {
+    let saquetotal = saque + taxa;
+    if (saldo > saquetotal) {
+        document.write("saldo indisponivel");
+    } else {
+
+    } */
 }
