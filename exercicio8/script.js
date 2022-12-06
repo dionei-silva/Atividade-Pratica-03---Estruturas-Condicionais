@@ -5,3 +5,12 @@ quantidade de iterações também (i).
 1 * 2 = 2
 2 * 2 = 4
 3 * 2 = 6 */
+
+let n = Number(prompt("Digite um valor maior que zero"));
+let i = 2;
+let resultado = n * i;
+let interacoes = Number(prompt("digite quantas interacoes: "));
+do {
+    document.write(`<p>${n} * ${i} = ${n * i}</p>`);
+    n++;
+} while (n < interacoes);
