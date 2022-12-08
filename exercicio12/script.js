@@ -18,6 +18,6 @@ for (let i = 1; i <= 10; i++) {
         negativa++;
     }
 }
-document.write(`<p>media aritmetica: ${total / 10}</p>`);
+document.write(`<p>A media aritmetica: ${total / 10}</p>`);
 document.write(`<p>porcento positivo: ${(10 * positiva) / 100}</p>`);
 document.write(`<p>porcento negativo: ${(10 * negativa) / 10}</p>`);
